@@ -20,7 +20,9 @@ from repositories import vet_repository, animal_repository
 # all_animals = animal_repository.select_all()
 # for animal in all_animals:
 #     print(animal.__dict__)
+vet_repository.delete(2)
 
 all_vets = vet_repository.select_all()
 for vet in all_vets:
     print(vet.__dict__)
+

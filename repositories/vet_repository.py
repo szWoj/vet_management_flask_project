@@ -33,3 +33,8 @@ def select_all():
         vet = Vet(row['name'], row['contact'], row['status'], row['id'])
         vets.append(vet)
     return vets
+
+def delete(id):
+    sql = "DELETE FROM vets WHERE id = %s"
+    values=[id]
+    run_sql(sql, values)
