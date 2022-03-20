@@ -5,7 +5,7 @@ from models.animal import *
 class AnimalTest(unittest.TestCase):
 
     def setUp(self):
-        self.animal = Animal("Rex", "03-05-2021", "pudel", "07911-123456", "Regular check-up")
+        self.animal = Animal("Rex", "03-05-2021", "pudel", "07911-123456", "Regular check-up", 1)
         
     def test_animal_has_name(self):
         self.assertEqual("Rex", self.animal.name)
@@ -17,3 +17,5 @@ class AnimalTest(unittest.TestCase):
         self.assertEqual("07911-123456", self.animal.contact)
     def test_animal_has_notes(self):
         self.assertEqual("Regular check-up", self.animal.notes)
+    def test_animal_has_vet_id(self):
+        self.assertEqual(1, self.animal.vet_id)
