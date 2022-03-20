@@ -2,6 +2,7 @@
 from db.run_sql import run_sql
 from repositories import vet_repository
 from models.animal import Animal
+from models.vet import Vet
 
 def save(animal):
     sql = "INSERT INTO animals (name, vet_id, dob, type, contact, notes) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
