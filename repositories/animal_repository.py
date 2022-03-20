@@ -4,8 +4,8 @@ from repositories import vet_repository
 from models.animal import Animal
 
 def save(animal):
-    sql = "INSERT INTO animals (name, dob, type, contact, notes) VALUES (%s, %s, %s, %s, %s) RETURNING *"
-    values = [animal.name, animal.dob, animal.type, animal.contact, animal.notes]
+    sql = "INSERT INTO animals (name, vet_id, dob, type, contact, notes) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [animal.name, animal.vet.id, animal.dob, animal.type, animal.contact, animal.notes]
 
     results = run_sql(sql, values)
 
@@ -42,6 +42,6 @@ def delete_all():
     run_sql(sql)
 
 def update(animal):
-    sql = "UPDATE animals SET (name, dob, type, contact, notes) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [animal.name, animal.dob, animal.type, animal.contact, animal.notes, animal.id]
+    sql = "UPDATE animals SET (name, vet_id, dob, type, contact, notes, ) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [animal.name, animal.vet.id, animal.dob, animal.type, animal.contact, animal.notes, animal.id]
     run_sql(sql, values)
