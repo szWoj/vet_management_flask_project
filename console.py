@@ -12,15 +12,16 @@ from repositories import vet_repository, animal_repository
 # animal_1.type = "York"
 # animal_repository.update(animal_1)
 
-# vet_2 = Vet("Bob", "0900-3444567", "working")
-# vet_repository.save(vet_2)
+vet_4 = Vet("Frank", "0900-3444567", "on leave")
+vet_repository.save(vet_4)
 # print(vet_repository.select(vet_2.id).__dict__)
-
+vet_4.status = "sick"
+vet_repository.update(vet_4)
 
 # all_animals = animal_repository.select_all()
 # for animal in all_animals:
 #     print(animal.__dict__)
-vet_repository.delete(2)
+# vet_repository.delete(2)
 
 all_vets = vet_repository.select_all()
 for vet in all_vets:
