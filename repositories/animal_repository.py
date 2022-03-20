@@ -1,4 +1,4 @@
-from optparse import Values
+
 from db.run_sql import run_sql
 from repositories import vet_repository
 from models.animal import Animal
@@ -20,6 +20,7 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
+        #this will be added later to get vet vet=vet_repository.select(['vet_id])
         animal = Animal(result["name"], result['dob'], result['type'], result['contact'], result['notes'], id)
     return animal
 
