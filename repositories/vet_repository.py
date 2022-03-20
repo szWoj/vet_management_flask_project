@@ -24,3 +24,12 @@ def select(id):
         
         vet = Vet(result["name"], result['contact'], result['status'], id)
     return vet
+
+def select_all():
+    vets = []
+    sql = "SELECT * FROM vets"
+    results = run_sql(sql)
+    for row in results:
+        vet = Vet(row['name'], row['contact'], row['status'], row['id'])
+        vets.append(vet)
+    return vets
