@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% for vet in vets %}
+    <p>Title: {{ vet.name }}</p>
+    <p>Contact: {{ vet.contact }}</p>
+    <p>Status: {{ vet.status }}</p>
+    <form action="/vets/{{ vet.id }}/delete" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    <form action="/vets/{{ vet.id }}/edit" method="GET">
+        <button type="submit">Update</button>
+    </form>
+    <br>
+{% endfor %}
+    {% endblock %}
