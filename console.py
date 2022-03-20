@@ -5,3 +5,5 @@ from repositories import vet_repository, animal_repository
 
 animal_1 = Animal("Rex", "03-02-2021", "pudel", "07911-123456", "regular check-up")
 animal_repository.save(animal_1)
+
+print(animal_repository.select(animal_1.id).__dict__)
