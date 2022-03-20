@@ -15,3 +15,12 @@ def save(vet):
 
     return vet
 
+def select(id):
+    vet = None
+    sql = "SELECT * FROM vets WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    if result is not None:
+        
+        vet = Vet(result["name"], result['contact'], result['status'], id)
+    return vet
