@@ -13,3 +13,8 @@ def vets_menu():
 def vets_all():
     vets = vet_repository.select_all()
     return render_template('vets/all_vets.html', vets=vets)
+
+@vets_blueprint.route('/vets/delete_all')
+def delete_all_vets():
+    vet_repository.delete_all()
+    return redirect('/')
