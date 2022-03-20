@@ -8,6 +8,10 @@ from repositories import vet_repository, animal_repository
 
 # print(animal_repository.select(animal_1.id).__dict__)
 
+
+
+animal_repository.delete(2)
+
 all_animals = animal_repository.select_all()
 for animal in all_animals:
     print(animal.__dict__)
