@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
+<p>VETS @ OUR PRACTISE</p>
+<hr style="width:50%;text-align:left;margin-left:0">
 {% for vet in vets %}
     <p>Vet name: {{ vet.name }}</p>
-    <p>Contact: {{ vet.contact }}</p>
+    <!-- <p>Contact: {{ vet.contact }}</p> -->
     <p>Status: {{ vet.status }}</p>
     <form action="/vets/{{ vet.id }}" method="GET">
         <button type="submit">See more details</button>
@@ -13,6 +15,6 @@
     <form action="/vets/{{ vet.id }}/edit" method="GET">
         <button type="submit">Update</button>
     </form>
-    <br>
+    <hr style="width:50%;text-align:left;margin-left:0">
 {% endfor %}
     {% endblock %}

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+<p>ANIMALS @ OUR PRACTISE</p>
+<hr style="width:50%;text-align:left;margin-left:0">
 {% for animal in animals %}
     <p>Pet name: {{ animal.name }}</p>
     <!-- <p>DOB: {{ animal.dob }}</p> -->
@@ -17,6 +19,7 @@
     <form action="/animals/{{ animal.id }}/edit" method="GET">
         <button type="submit">Update</button>
     </form>
-    <br>
+    <hr style="width:50%;text-align:left;margin-left:0">
+    
 {% endfor %}
     {% endblock %}
