@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/animal/{{animal.id}}" method="post">
+<form action="/animals/{{animal.id}}" method="post">
   <div>
     <label for="name">Pet's Name:</label>
     <input type="text" id="pet-name" name="pet-name" value="{{animal.name}}" required autofocus>
@@ -36,7 +36,7 @@
 </div>
 
 
-  <button type="submit">Update Vet's info</button>
+  <button type="submit">Update Animal's info</button>
 
 </form>
 

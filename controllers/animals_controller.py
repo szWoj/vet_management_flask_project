@@ -55,3 +55,16 @@ def edit_animal(id):
     animal = animal_repository.select(id)
     vets = vet_repository.select_all()
     return render_template("animals/edit.html", animal = animal, vets=vets)
+
+@animals_blueprint.route("/animals/<id>", methods = ["POST"])
+def update_animal(id):
+    name = request.form["pet-name"]
+    dob = request.form["dob"]
+    type = request.form["type"]
+    contact = request.form["contact"]
+    notes = request.form["notes"]
+    vet_id = request.form["vet_id"]
+    vet = vet_repository.select(vet_id)
+    animal = Animal(name,dob, type, contact, notes, vet, id)
+    animal_repository.update(animal)
+    return redirect('/animals/animals_all')
