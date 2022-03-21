@@ -1,18 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-{% for vet in vets %}
-    <p>Vet name: {{ vet.name }}</p>
+<p>Name: {{ vet.name }}</p>
     <p>Contact: {{ vet.contact }}</p>
+    <p>Type: {{ vet.contact }}</p>
     <p>Status: {{ vet.status }}</p>
-    <form action="/vets/{{ vet.id }}" method="GET">
-        <button type="submit">See more details</button>
-    </form>
+    
+    
     <form action="/vets/{{ vet.id }}/delete" method="POST">
         <button type="submit">Delete</button>
     </form>
     <form action="/vets/{{ vet.id }}/edit" method="GET">
         <button type="submit">Update</button>
     </form>
-    <br>
-{% endfor %}
     {% endblock %}

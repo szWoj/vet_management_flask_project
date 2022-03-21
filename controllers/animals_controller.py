@@ -18,3 +18,8 @@ def animals_all():
 def delete_all_animals():
     animal_repository.delete_all()
     return redirect('/')
+
+@animals_blueprint.route('/animals/<id>')
+def display_an_animal(id):
+    animal =animal_repository.select(id)
+    return render_template('animals/an_animal.html', animal=animal)

@@ -18,3 +18,8 @@ def vets_all():
 def delete_all_vets():
     vet_repository.delete_all()
     return redirect('/')
+
+@vets_blueprint.route('/vets/<id>')
+def display_a_vet(id):
+    vet =vet_repository.select(id)
+    return render_template('vets/a_vet.html', vet=vet)

@@ -22,10 +22,10 @@ from repositories import vet_repository, animal_repository
 # for animal in all_animals:
 #     print(animal.__dict__)
 # vet_repository.delete(2)
-vet_1 =Vet("Robert", "0900-3444567", "sick")
-vet_repository.save(vet_1)
+vet_2 =Vet("Markk", "0900-3444567", "working")
+vet_repository.save(vet_2)
 
-animal_1 = Animal("Mog", "03-02-2021", "buldog", "07911-123456", "regular check-up", vet_1)
+animal_1 = Animal("Megg", "03-02-2021", "pudel", "07911-123456", "regular check-up", vet_2)
 animal_repository.save(animal_1)
 
 all_animals = animal_repository.select_all()

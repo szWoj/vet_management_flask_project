@@ -21,8 +21,9 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        #this will be added later to get vet vet=vet_repository.select(['vet_id])
-        animal = Animal(result["name"], result['dob'], result['type'], result['contact'], result['notes'], id)
+        vet=vet_repository.select(['vet_id'])
+        animal = Animal(result["name"], result['dob'], result['type'], result['contact'], result['notes'],vet, result["id"])
+        print(animal)
     return animal
 
 def select_all():
@@ -30,8 +31,10 @@ def select_all():
     sql = "SELECT * FROM animals"
     results = run_sql(sql)
     for row in results:
-        animal = Animal(row['name'], row['dob'], row['type'], row['contact'], row['notes'], row['id'])
+        vet=vet_repository.select(row['vet_id'])
+        animal = Animal(row['name'], row['dob'], row['type'], row['contact'], row['notes'],vet, row['id'])
         animals.append(animal)
+        print(animal.id)
     return animals
 
 def delete(id):
