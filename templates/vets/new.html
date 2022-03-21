@@ -2,6 +2,37 @@
 
 {% block content %}
 
-New Vet form will appear here
+<form action="/vets/all_vets" method="post">
+    <div>
+      <label for="name">Vet Name:</label>
+      <input type="text" id="vet-name" name="vet-name" placeholder="Vet's name" required autofocus>
+    </div>
+  
+    <div>
+      <label for="contact">Duration:</label>
+      <input type="tel" id="number" name="number" placeholder="Phone Number" required>
+    </div>
+  
+    <div>
+        <label for="status">Choose:</label>
+        <select name="status" id="status">
+          <option value="working">working</option>
+          <option value="sick">sick</option>
+          <option value="on leave">on leave</option>
+        </select>
+    </div>
+  
+    <!-- <div>
+      <label for="user">User:</label>
+      <select id="user" name="user_id">
+        {% for user in all_users %}
+        <option value="{{ user.id }}">{{ user.first_name }}</option>
+        {% endfor %}
+      </select>
+    </div> -->
+  
+    <button type="submit">Add Vet</button>
+  
+  </form>
 
 {% endblock %}
