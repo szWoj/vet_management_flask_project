@@ -1,3 +1,4 @@
+from unicodedata import name
 from flask import Flask, render_template, request, redirect, Blueprint
 from repositories import vet_repository, animal_repository
 from models.vet import Vet
@@ -33,3 +34,14 @@ def delete_vet(id):
 def new_vet_form():
 
     return render_template('vets/new.html')
+
+@vets_blueprint.route('/vets', methods = ["POST"])
+def create_vet():
+    name = request.form["vet-name"]
+    contact = request.form["contact"]
+    status = request.form["status"]
+
+    vet = Vet(name, contact, status)
+    vet_repository.save(vet)
+
+    return redirect('/vets/vets_all')
