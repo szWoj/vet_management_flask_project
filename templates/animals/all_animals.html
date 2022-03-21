@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 {% for animal in animals %}
-    <p>Name: {{ animal.name }}</p>
-    <p>DOB: {{ animal.dob }}</p>
+    <p>Pet name: {{ animal.name }}</p>
+    <!-- <p>DOB: {{ animal.dob }}</p> -->
     <p>Type: {{ animal.type }}</p>
-    <p>Contact: {{ animal.contact }}</p>
-    <p>notes: {{ animal.notes }}</p>
+    <!-- <p>Contact: {{ animal.contact }}</p> -->
+    <!-- <p>notes: {{ animal.notes }}</p> -->
     <p>Vet: {{ animal.vet.name }}</p>
-    <p>Animal id: {{ animal.id }}</p>
+    
     <form action="/animals/{{ animal.id }}" method="GET">
         <button type="submit">See more details</button>
     </form>

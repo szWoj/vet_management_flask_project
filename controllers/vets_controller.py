@@ -23,3 +23,13 @@ def delete_all_vets():
 def display_a_vet(id):
     vet =vet_repository.select(id)
     return render_template('vets/a_vet.html', vet=vet)
+
+@vets_blueprint.route('/vets/<id>/delete', methods = ["POST"])
+def delete_vet(id):
+    vet_repository.delete(id)
+    return redirect('/vets/vets_all')
+
+@vets_blueprint.route('/vets/new')
+def new_vet_form():
+
+    return render_template('vets/new.html')

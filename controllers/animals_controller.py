@@ -22,4 +22,10 @@ def delete_all_animals():
 @animals_blueprint.route('/animals/<id>')
 def display_an_animal(id):
     animal =animal_repository.select(id)
+    
     return render_template('animals/an_animal.html', animal=animal)
+
+@animals_blueprint.route('/animals/<id>/delete', methods = ["POST"])
+def delete_animal(id):
+    animal_repository.delete(id)
+    return redirect('/animals/animals_all')
