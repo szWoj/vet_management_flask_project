@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/vets/{{vet.id}}" method="post">
+  <div>
+    <label for="name">Vet Name:</label>
+    <input type="text" id="name" name="name" value="{{vet.name}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="contact">Contact:</label>
+    <input type="tel" id="contact" name="contact" value="{{vet.contact}}" required>
+  </div>
+
+  <div>
+    <label for="status">Choose:</label>
+    <select name="status" id="status">
+      <option value="working">working</option>
+      <option value="sick">sick</option>
+      <option value="on leave">on leave</option>
+    </select>
+</div>
+
+
+  <button type="submit">Update Vet's info</button>
+
+</form>
+
+{% endblock %}
