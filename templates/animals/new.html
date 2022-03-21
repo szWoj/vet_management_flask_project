@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/animals" method="post">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="pet-name" name="pet-name" placeholder="Pet name" required autofocus>
+    </div>
+  
+    <div>
+      <label for="dob">Date of Birth:</label>
+      <input type="text" id="dob" name="dob" placeholder="Pet's DOB" required>
+    </div>
+    
+    <div>
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" placeholder="Pet's type" required>
+    </div>
+    
+    <div>
+      <label for="contact">Owner's Phone Number:</label>
+      <input type="text" id="contact" name="contact" placeholder="Phone Number" required>
+    </div>
+  
+    <div>
+        <label for="notes">Pre existing pet's conditions:</label>
+        <input type="text" id="notes" name="notes" placeholder="Any notes">
+      </div>
+    
+    <div>
+        <label for="vet">Vet:</label>
+        <select id="vet" name="vet_id">
+          {% for vet in vets %}
+          <option value="{{ vet.id }}">{{ vet.name }}</option>
+          {% endfor %}
+        </select>
+    </div>
+  
+    <button type="submit">Add Animal</button>
+  
+  </form>
+    {% endblock %}

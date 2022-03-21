@@ -1,3 +1,4 @@
+from logging import NOTSET
 from flask import Flask, render_template, request, redirect, Blueprint
 from repositories import vet_repository, animal_repository
 from models.vet import Vet
@@ -28,4 +29,23 @@ def display_an_animal(id):
 @animals_blueprint.route('/animals/<id>/delete', methods = ["POST"])
 def delete_animal(id):
     animal_repository.delete(id)
+    return redirect('/animals/animals_all')
+
+@animals_blueprint.route('/animals/new')
+def new_animal_form():
+    vets= vet_repository.select_all()
+    return render_template('animals/new.html', vets=vets) #, vets=vets
+
+@animals_blueprint.route('/animals', methods = ["POST"])
+def create_animal():
+    name = request.form["pet-name"]
+    dob = request.form["dob"]
+    type = request.form["type"]
+    vet_id = request.form["vet_id"]
+    contact = request.form["contact"]
+    notes = request.form["notes"]
+    vet = vet_repository.select(vet_id)
+    animal = Animal(name, dob, type, contact, notes, vet)
+    animal_repository.save(animal)
+
     return redirect('/animals/animals_all')
