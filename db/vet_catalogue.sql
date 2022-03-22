@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS appointments;
 DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS vets;
 
@@ -18,3 +19,11 @@ CREATE TABLE animals (
     notes TEXT,
     vet_id INT REFERENCES vets(id)
 );
+
+CREATE TABLE appointments (
+    id SERIAL PRIMARY KEY,
+    date VARCHAR(255),
+    checked_in BOOLEAN,
+    vet_id INT REFERENCES vets(id),
+    animal_id INT REFERENCES animals(id)
+)
