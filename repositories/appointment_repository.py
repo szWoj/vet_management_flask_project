@@ -27,3 +27,7 @@ def select_all():
         appointments.append(appointment)
     return appointments
 
+def check_in(appointment):
+    sql = "UPDATE appointments SET checked_in = %s WHERE  id=%s"
+    values = [appointment.checked_in, appointment.id]
+    run_sql(sql, values)
