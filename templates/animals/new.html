@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <p>REGISTER A NEW ANIMAL</p>
+<hr style="width:50%;text-align:left;margin-left:0">
 <form action="/animals" method="post">
     <div>
       <label for="name">Name:</label>
@@ -9,7 +10,7 @@
   
     <div>
       <label for="dob">Date of Birth:</label>
-      <input type="text" id="dob" name="dob" placeholder="Pet's DOB" required>
+      <input type="date" id="dob" name="dob" placeholder="Pet's DOB" required>
     </div>
     
     <div>
