@@ -30,3 +30,10 @@ def create_appointment():
 
     return redirect('/appointments/appointments_all')
 
+@appointments_blueprint.route('/appointments/<id>/check_in', methods = ["POST"])
+def check_in_appointment(id):
+    appointment = appointment_repository.select(id)
+    appointment.checked_in = True
+
+    appointment_repository.check_in(appointment)
+    return redirect('/appointments/appointments_all')

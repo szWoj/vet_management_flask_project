@@ -9,9 +9,15 @@
     <p>Pet's Name: {{ appointment.animal.name }}</p>
     
     <p>Checked In? {{appointment.checked_in}}</p>
+    {% if appointment.checked_in == False %}
     <form action="/appointments/{{ appointment.id }}/check_in" method="POST">
         <button type="submit">Check In this Pet</button>
     </form>
+    {% else %}
+    <div class="boxed">
+        Pet's alreday checked in
+    </div>
+    {% endif %}
     <hr style="width:50%;text-align:left;margin-left:0">
     
 {% endfor %}

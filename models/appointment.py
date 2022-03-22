@@ -9,4 +9,4 @@ class Appointment:
 
     def mark_checked_in(self):
         self.checked_in = True
-        
+    

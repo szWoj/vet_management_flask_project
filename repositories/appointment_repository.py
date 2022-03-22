@@ -35,7 +35,7 @@ def select(id):
     if result is not None:
         vet=vet_repository.select(result['vet_id'])
         animal= animal_repository.select(result['animal_id'])
-        appointment = Appointment(result["date"], result['time'],vet, animal, result["id"])
+        appointment = Appointment(result["date"], result['time'],vet, animal, result["checked_in"],result["id"])
     return appointment
 
 

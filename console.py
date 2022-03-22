@@ -40,14 +40,15 @@ appointment_repository.save(appointment1)
 # appointment_repository.save(appointment2)
 # appointment1.checked_in = True
 # appointment_repository.check_in(appointment1)
+# app=appointment_repository.select(2)
+# print(app.__dict__)
+# all_appointments = appointment_repository.select_all()
+# for appointment in all_appointments:
+#     print(appointment.__dict__)
 
-# all_animals = animal_repository.select_all()
-# for animal in all_animals:
-#     print(animal.__dict__)
-
-all_appointments = appointment_repository.select_all()
-for appointment in all_appointments:
-    print(appointment.__dict__)
+# all_appointments = appointment_repository.select_all()
+# for appointment in all_appointments:
+#     print(appointment.__dict__)
 
 # all_vets = vet_repository.select_all()
 # for vet in all_vets:
