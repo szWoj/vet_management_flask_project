@@ -16,3 +16,13 @@ def save(appointment):
 
     return appointment
 
+def select_all():
+    appointments = []
+    sql = "SELECT * FROM appointments"
+    results = run_sql(sql)
+    for row in results:
+        vet=vet_repository.select(row['vet_id'])
+        animal=animal_repository.select(row['animal_id'])
+        appointment = Appointment(row['date'], row['time'],vet ,animal, row['id'])
+        appointments.append(appointment)
+    return appointments
