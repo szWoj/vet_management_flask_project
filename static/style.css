@@ -1,0 +1,15 @@
+.boxed {
+    font-size: 100%;
+  width : 100%;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  }
+  .boxed > p {
+    text-shadow: 2px 2px #89f7ed;
+  }
+
+  body{
+    font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+    background-color: rgb(243, 238, 213);
+  }
