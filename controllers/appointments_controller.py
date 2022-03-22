@@ -12,6 +12,11 @@ def new_appointment_form():
     animals = animal_repository.select_all()
     return render_template('appointments/new.html', vets=vets, animals=animals)
 
+@appointments_blueprint.route('/appointments/appointments_all')
+def appointments_all():
+    appointments = appointment_repository.select_all()
+    return render_template('appointments/appointments_all.html', appointments=appointments)
+
 @appointments_blueprint.route('/appointments', methods = ["POST"])
 def create_appointment():
     date = request.form["date"]
