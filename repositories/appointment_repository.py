@@ -27,6 +27,18 @@ def select_all():
         appointments.append(appointment)
     return appointments
 
+def select(id):
+    appointment = None
+    sql = "SELECT * FROM appointments WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    if result is not None:
+        vet=vet_repository.select(result['vet_id'])
+        animal= animal_repository.select(result['animal_id'])
+        appointment = Appointment(result["date"], result['time'],vet, animal, result["id"])
+    return appointment
+
+
 def check_in(appointment):
     sql = "UPDATE appointments SET checked_in = %s WHERE  id=%s"
     values = [appointment.checked_in, appointment.id]

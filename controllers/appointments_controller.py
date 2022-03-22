@@ -29,3 +29,4 @@ def create_appointment():
     appointment_repository.save(appointment)
 
     return redirect('/appointments/appointments_all')
+
