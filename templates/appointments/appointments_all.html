@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<p>APPOINTMENTS @ OUR PRACTISE</p>
+<hr style="width:50%;text-align:left;margin-left:0">
+{% for appointment in appointments %}
+    <p>Appointment Date: {{ appointment.date }}</p>
+    <p>Time: {{ appointment.time }}</p>
+    <p>Vet: {{ appointment.vet.name }}</p>
+    <p>Pet's Name: {{ appointment.animal.name }}</p>
+    
+    <p>Checked In? {{appointment.checked_in}}</p>
+    <hr style="width:50%;text-align:left;margin-left:0">
+    
+{% endfor %}
+{% endblock %}
