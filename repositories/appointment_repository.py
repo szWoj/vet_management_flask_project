@@ -15,3 +15,4 @@ def save(appointment):
     appointment.id = id
 
     return appointment
+
