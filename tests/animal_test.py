@@ -18,4 +18,4 @@ class AnimalTest(unittest.TestCase):
     def test_animal_has_notes(self):
         self.assertEqual("Regular check-up", self.animal.notes)
     def test_animal_has_vet_id(self):
-        self.assertEqual(1, self.animal.vet_id)
+        self.assertEqual(1, self.animal.vet)

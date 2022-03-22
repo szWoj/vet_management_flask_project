@@ -1,5 +1,5 @@
 class Appointment:
-    def __init__(self, date, time, vet, animal, checked_in = False id = None):
+    def __init__(self, date, time, vet, animal, checked_in = False, id = None):
         self.date = date
         self.time = time
         self.vet = vet
