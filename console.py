@@ -1,7 +1,8 @@
 from models.animal import Animal
+from models.appointment import Appointment
 from models.vet import Vet
 
-from repositories import vet_repository, animal_repository
+from repositories import appointment_repository, vet_repository, animal_repository
 
 # animal_1 = Animal("Meg", "03-02-2021", "pudel", "07911-123456", "regular check-up")
 # animal_repository.save(animal_1)
@@ -22,15 +23,7 @@ from repositories import vet_repository, animal_repository
 # for animal in all_animals:
 #     print(animal.__dict__)
 # vet_repository.delete(2)
-vet_2 =Vet("Markk", "0900-3444567", "working")
-vet_repository.save(vet_2)
 
-animal_1 = Animal("Megg", "03-02-2021", "pudel", "07911-123456", "regular check-up", vet_2)
-animal_repository.save(animal_1)
-
-all_animals = animal_repository.select_all()
-for animal in all_animals:
-    print(animal.__dict__)
 
 # all_vets = vet_repository.select_all()
 # for vet in all_vets:

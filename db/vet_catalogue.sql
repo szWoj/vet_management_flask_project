@@ -24,7 +24,7 @@ CREATE TABLE appointments (
     id SERIAL PRIMARY KEY,
     date VARCHAR(255),
     time VARCHAR(255),
-    checked_in BOOLEAN,
+    checked_in BOOLEAN DEFAULT false,
     vet_id INT REFERENCES vets(id),
     animal_id INT REFERENCES animals(id)
 )
