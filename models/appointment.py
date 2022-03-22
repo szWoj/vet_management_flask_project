@@ -5,6 +5,7 @@ class Appointment:
         self.vet = vet
         self.animal = animal
         self.checked_in = checked_in
+        self.id = id
 
     def mark_checked_in(self):
         self.checked_in = True

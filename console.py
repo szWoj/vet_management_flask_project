@@ -23,21 +23,23 @@ from repositories import appointment_repository, vet_repository, animal_reposito
 # for animal in all_animals:
 #     print(animal.__dict__)
 # vet_repository.delete(2)
-# vet_1 =Vet("Rob", "0900-34567", "sick")
-# vet_repository.save(vet_1)
+vet_1 =Vet("Rob", "0900-34567", "sick")
+vet_repository.save(vet_1)
 # vet_2 =Vet("Markk", "0900-3444567", "working")
 # vet_repository.save(vet_2)
 
-# animal_1 = Animal("Meg", "03-02-2021", "pudel", "07911-123456", "regular check-up", vet_1)
-# animal_repository.save(animal_1)
+animal_1 = Animal("Meg", "03-02-2021", "pudel", "07911-123456", "regular check-up", vet_1)
+animal_repository.save(animal_1)
 # animal_2 = Animal("Mog", "04-06-2021", "cat", "0791-3456", "regular check-up", vet_2)
 # animal_repository.save(animal_2)
 
-# appointment1 = Appointment("03-02-2021", "17:30", vet_1, animal_1)
-# appointment_repository.save(appointment1)
+appointment1 = Appointment("03-02-2021", "17:30", vet_1, animal_1)
+appointment_repository.save(appointment1)
 
-# appointment2 = Appointment("01-02-2021", "14:30", vet_2, animal_2)
+# appointment3 = Appointment("01-02-2021", "14:30", vet_2, animal_2)
 # appointment_repository.save(appointment2)
+appointment1.checked_in = True
+appointment_repository.check_in(appointment1)
 
 # all_animals = animal_repository.select_all()
 # for animal in all_animals:

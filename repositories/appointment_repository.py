@@ -6,8 +6,8 @@ from models.vet import Vet
 from models.appointment import Appointment
 
 def save(appointment):
-    sql = "INSERT INTO appointments (date, time, vet_id, animal_id) VALUES (%s, %s, %s, %s) RETURNING *"
-    values = [appointment.date, appointment.time, appointment.vet.id, appointment.animal.id]
+    sql = "INSERT INTO appointments (date, time, vet_id, animal_id, checked_in) VALUES (%s, %s, %s, %s, %s) RETURNING *"
+    values = [appointment.date, appointment.time, appointment.vet.id, appointment.animal.id, appointment.checked_in]
 
     results = run_sql(sql, values)
 
@@ -23,6 +23,7 @@ def select_all():
     for row in results:
         vet=vet_repository.select(row['vet_id'])
         animal=animal_repository.select(row['animal_id'])
-        appointment = Appointment(row['date'], row['time'],vet ,animal, row['id'])
+        appointment = Appointment(row['date'], row['time'],vet ,animal, row['checked_in'], row['id'])
         appointments.append(appointment)
     return appointments
+

@@ -27,4 +27,4 @@ CREATE TABLE appointments (
     checked_in BOOLEAN DEFAULT false,
     vet_id INT REFERENCES vets(id),
     animal_id INT REFERENCES animals(id)
-)
+);
