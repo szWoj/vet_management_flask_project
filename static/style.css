@@ -45,3 +45,17 @@ button {
     cursor: pointer;
     padding: 5px 20px;
 }
+
+nav {
+    padding: 0px;
+    margin: 0px;
+    text-align: left;
+    
+  }
+  
+  nav ul li {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    display: block;
+    
+  }
