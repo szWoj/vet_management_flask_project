@@ -43,3 +43,7 @@ def check_in(appointment):
     sql = "UPDATE appointments SET checked_in = %s WHERE  id=%s"
     values = [appointment.checked_in, appointment.id]
     run_sql(sql, values)
+
+def delete_all():
+    sql = "DELETE FROM appointments"
+    run_sql(sql)

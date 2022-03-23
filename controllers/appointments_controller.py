@@ -37,3 +37,8 @@ def check_in_appointment(id):
 
     appointment_repository.check_in(appointment)
     return redirect('/appointments/appointments_all')
+
+@appointments_blueprint.route('/appointments/delete_all')
+def delete_all_appointments():
+    appointment_repository.delete_all()
+    return redirect('/')
