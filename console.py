@@ -33,8 +33,8 @@ animal_repository.save(animal_1)
 # animal_2 = Animal("Mog", "04-06-2021", "cat", "0791-3456", "regular check-up", vet_2)
 # animal_repository.save(animal_2)
 
-appointment1 = Appointment("03-09-2021", "16:30", vet_1, animal_1)
-appointment_repository.save(appointment1)
+# appointment1 = Appointment("03-09-2021", "16:30", vet_1, animal_1)
+# appointment_repository.save(appointment1)
 
 # appointment3 = Appointment("01-02-2021", "14:30", vet_2, animal_2)
 # appointment_repository.save(appointment2)
@@ -53,5 +53,5 @@ appointment_repository.save(appointment1)
 # all_vets = vet_repository.select_all()
 # for vet in all_vets:
 #     print(vet.__dict__)
-
+animal_repository.delete_all()
 
