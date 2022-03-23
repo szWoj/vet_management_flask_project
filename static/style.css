@@ -13,3 +13,35 @@
     font-family: "Helvetica", arial, sans-serif; font-size: 16px;
     background-color: rgb(243, 238, 213);
   }
+.menu{
+    list-style-type:none;
+}
+
+input {
+    padding: 10px;
+    display: inline-block;
+    float: left;
+    
+}
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: left; /*Change to right here if you want it close to the inputs*/
+}
+select {
+    padding: 10px;
+    display: inline-block;
+    float: left; /*Change to right here if you want it close to the inputs*/
+}
+button {
+    display: inline-block;
+    display:block;
+    float: left;
+    clear: left;
+    width: 150px;
+    text-align: left; /*Change to right here if you want it close to the inputs*/
+    cursor: pointer;
+    padding: 5px 20px;
+}
