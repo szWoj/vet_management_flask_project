@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="/animals/delete_all">
-    <button type="submit">Delete ALL Animals from db</button>
-</form>
-<form action="/vets/delete_all">
-    <button type="submit">Delete ALL vets from db</button>
-</form>
-    {% endblock %}
+
+    {% if animals|length != 0 %}
+    <form action="/animals/delete_all">
+        <button type="submit">Delete ALL Animals from db</button>
+    </form>
+
+    {% elif animals|length == 0 and vets|length != 0 %}
+    <p>No Animals in our database</p>
+    <form action="/vets/delete_all">
+        <button type="submit">Delete ALL vets from db</button>
+    </form>
+
+    {% elif animals|length == 0 and vets|length == 0 %}
+    <p>No data to be deleted</p>
+
+    {% endif %}
+
+{% endblock %}
 

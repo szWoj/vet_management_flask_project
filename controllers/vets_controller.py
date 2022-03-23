@@ -18,7 +18,7 @@ def vets_all():
 @vets_blueprint.route('/vets/delete_all')
 def delete_all_vets():
     vet_repository.delete_all()
-    return redirect('/')
+    return redirect('/about')
 
 @vets_blueprint.route('/vets/<id>')
 def display_a_vet(id):

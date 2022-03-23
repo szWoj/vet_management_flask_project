@@ -18,7 +18,7 @@ def animals_all():
 @animals_blueprint.route('/animals/delete_all')
 def delete_all_animals():
     animal_repository.delete_all()
-    return redirect('/')
+    return redirect('/about')
 
 @animals_blueprint.route('/animals/<id>')
 def display_an_animal(id):

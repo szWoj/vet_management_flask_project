@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from controllers.animals_controller import animals_blueprint
 from controllers.vets_controller import vets_blueprint
 from controllers.appointments_controller import appointments_blueprint
-from repositories import appointment_repository
+from repositories import animal_repository, appointment_repository, vet_repository
 
 app = Flask(__name__)
 
@@ -16,7 +16,9 @@ def home():
 
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    animals=animal_repository.select_all()
+    vets=vet_repository.select_all()
+    return render_template('about.html', animals=animals, vets=vets)
 
 if __name__ == "__main__":
     app.run(debug=True)
