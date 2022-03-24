@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<p>APPOINTMENTS @ OUR PRACTISE</p>
+<p>APPOINTMENTS @ OUR PRACTICE</p>
 <hr style="width:50%;text-align:left;margin-left:0">
 {% for appointment in appointments %}
     <p>Appointment Date: {{ appointment.date }}</p>
@@ -15,7 +15,7 @@
     </form>
     {% else %}
     <div class="boxed">
-        <p>Pet's alreday checked in</p>
+        <p>Pet has been checked in</p>
     </div>
     {% endif %}
     <br>
