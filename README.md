@@ -34,3 +34,9 @@ ABOUT US section allows to clear db. To be able to do so, animals have to be cle
 ![Screen Shot 2022-05-21 at 17 44 26](https://user-images.githubusercontent.com/79700458/169661758-d3d0ab83-95cd-41e0-94eb-9c60fcd44ecb.png)
 ![Screen Shot 2022-05-21 at 17 59 59](https://user-images.githubusercontent.com/79700458/169661761-2a13db01-ed95-4c9c-94eb-1016e3d20e89.png)
 ![Screen Shot 2022-05-21 at 18 00 10](https://user-images.githubusercontent.com/79700458/169661765-5d9e7c9b-6e3d-48fd-8564-7a2068335596.png)
+
+Site Map
+
+
+![Site Map](https://user-images.githubusercontent.com/79700458/169662550-e32861d1-e6b1-4d5e-b832-1e7a77d0ea17.png)
+
